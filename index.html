@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="/password_generator/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Edu+VIC+WA+NT+Beginner&family=Merriweather:wght@300&family=Montserrat:wght@500&family=Poppins:wght@200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Raleway:wght@700&family=Roboto:ital,wght@1,900&family=Ubuntu:wght@400;700&display=swap');
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Edu+VIC+WA+NT+Beginner&family=Merriweather:wght@300&family=Montserrat:wght@500&family=Poppins:wght@200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Raleway:wght@700&family=Roboto:ital,wght@1,900&family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="heading">
+            <h1>Password Generator</h1>
+        </div>
+
+
+        <div class="options_body">
+
+            <div class="leftholder">
+                <div class="output">
+                    <input type="text" id="password" readonly>
+                    <div class="copy_btn">
+                        <button id="copyButton" onclick="copyPassword()"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </div>
+
+                <label for="length" class="passlen_label">Password Length:</label>
+                <div class="pass_length">
+                    <input type="range" id="length" min="6" max="30" value="12">
+                    <span id="lengthValue">12</span>
+                </div>
+            </div>
+
+            <div class="rightholder">
+                <h3>Options</h3>
+                <div class="container1">
+
+                    <div class="checkboxes">
+                        <div class="box1">
+
+                            <div class="hold">
+                                <input class="chk_hov" type="checkbox" id="lowercase" checked>
+                                <label class="chk_label" for="lowercase">Lowercase</label>
+                            </div>
+
+                            <div class="hold">
+                                <input class="chk_hov" type="checkbox" id="uppercase" checked>
+                                <label class="chk_label" for="uppercase">Uppercase</label>
+                            </div>
+
+                            <div class="hold">
+                                <input class="chk_hov" type="checkbox" id="excludeDuplicates">
+                                <label class="chk_label" for="excludeDuplicates">Exclude Duplicates</label>
+                            </div>
+
+                        </div>
+
+                        <div class="box2">
+
+                            <div class="hold">
+                                <input class="chk_hov" type="checkbox" id="numbers" checked>
+                                <label class="chk_label" for="numbers">Numbers</label>
+                            </div>
+
+                            <div class="hold">
+                                <input class="chk_hov" type="checkbox" id="symbols" checked>
+                                <label class="chk_label" for="symbols">Symbols</label>
+                            </div>
+
+                            <div class="hold">
+                                <input class="chk_hov" type="checkbox" id="includeSpaces">
+                                <label class="chk_label" for="includeSpaces">Include Spaces</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container2">
+
+                    <div class="slide_vals">
+                        <div class="sl_l"><label for="lowercaseCount" class="chk_label">Lowercase Count:</label></div>
+                        <div class="s_hold">
+                            <div class="sl_i"><input type="range" class="chk_hov" id="lowercaseCount" min="0" max="30" value="0"></div>
+                            <div class="sl_v"><span id="lowercaseCountValue">0</span></div>
+                        </div>
+
+                        <div class="sl_l"><label for="uppercaseCount" class="chk_label">Uppercase Count:</label></div>
+                        <div class="s_hold">
+                            <div class="sl_i"><input type="range" class="chk_hov" id="uppercaseCount" min="0" max="30" value="0"></div>
+                            <div class="sl_v"><span id="uppercaseCountValue">0</span></div>
+                        </div>
+
+                        <div class="sl_l"><label for="numbersCount" class="chk_label">Numbers Count:</label></div>
+                        <div class="s_hold">
+                            <div class="sl_i"><input type="range" class="chk_hov" id="numbersCount" min="0" max="30" value="0"></div>
+                            <div class="sl_v"><span id="numbersCountValue">0</span></div>
+                        </div>
+
+                        <div class="sl_l"><label for="symbolsCount" class="chk_label">Symbols Count:</label></div>
+                        <div class="s_hold">
+                            <div class="sl_i"><input type="range" class="chk_hov" id="symbolsCount" min="0" max="30" value="0"></div>
+                            <div class="sl_v"><span id="symbolsCountValue">0</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="btn_group">
+            <div class="buttons">
+                <button class="generate_btn" id="generateButton" onclick="generatePassword()">Generate</button>
+                <!--<button id="regenerateButton" onclick="regeneratePassword()">Regenerate</button>-->
+            </div>
+            <button class="refresh_btn" id="refreshButton" onclick="refreshPage()">Refresh</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/password_generator/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --foreground-color: #f1f1f1;
+    --border-color: #eee;
+    --divider-color: #dedede;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --heading_text-color: rgb(51, 51, 51);
+    --text-color: rgb(240, 240, 240);
+    --generate_btn-color: #1DA1F2;
+    --copy_btn-color: #e1e1e1;
+    --generate_btn_hover-color: #1590dd;
+    --copy_btn_hover-color: #d3d3d3;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+}
+
+.heading {
+    height: auto;
+    width: auto;
+    margin-bottom: 60px;
+    color: var(--heading_text-color);
+}
+
+.heading h1 {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.options_body {
+    height: 450px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    background: var(--foreground-color);
+    box-shadow: 0 4px 10px -1px var(--shadow-color),
+    0 2px 6px -2px var(--shadow-color);
+}
+
+.leftholder {
+    height: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-radius: 20px;
+    background: transparent
+}
+
+.output {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: auto;
+    width: 90%;
+    border-radius: 10px;
+    background: var(--bg-color);
+}
+
+#password {
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    height: 40px;
+    width: 100%;
+    color: var(--heading_text-color);
+}
+
+.copy_btn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: auto;
+    width: auto;
+    margin-right: 2px;
+}
+
+#copyButton {
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background: var(--copy_btn-color);
+}
+
+#copyButton:hover {
+    background: var(--copy_btn_hover-color);
+}
+
+.rightholder {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-radius: 20px;
+}
+
+.container1 {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.passlen_label {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    margin-top: 30px;
+    color: var(--heading_text-color);
+}
+
+.pass_length {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#length {
+    height: auto;
+    width: 70%;
+    cursor: pointer;
+}
+
+#lengthValue {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 40px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    background: var(--bg-color);
+}
+
+.sl_v {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 150px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    background: var(--bg-color);
+}
+
+.checkboxes {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--divider-color);
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+    height: auto;
+    width: auto;
+    margin: 30px;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+.box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+    height: auto;
+    width: auto;
+    margin: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.hold {
+    height: auto;
+    width: auto;
+    margin: 8px 6px;
+}
+
+.chk_label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.container2 {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.slide_vals {
+    height: auto;
+    width: 100%;
+}
+
+.s_hold {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.checkboxes {
+    text-align: left;
+}
+
+.chk_hov {
+    cursor: pointer;
+}
+
+.btn_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 365px;
+}
+
+.generate_btn {
+    font-size: 20px;
+    font-weight: 600;
+    height: auto;
+    width: 360px;
+    padding: 12px 25px;
+    border-radius: 12px;
+    border: none;
+    margin: 25px 0;
+    background: var(--generate_btn-color);
+    color: var(--border-color);
+    cursor: pointer;
+}
+
+.generate_btn:hover {
+    background: var(--generate_btn_hover-color);
+}
+
+.refresh_btn {
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    width: 40%;
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: none;
+    margin: 25px 0;
+    background: var(--copy_btn-color);
+    cursor: pointer;
+}
+
+.refresh_btn:hover {
+    background: var(--copy_btn_hover-color);
+}
+
+
+
+@media (max-width: 1300px) {
+    .wrapper {
+        height: auto;
+        width: auto;
+    }
+
+    .heading {
+        height: 50px;
+        width: auto;
+        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+
+    .heading h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 950px) {
+    .output {
+        position: relative;
+        top: 10px;
+    }
+
+    .wrapper {
+        
+        height: auto;
+        width: auto;
+    }
+    
+    .options_body {
+        height: 610px;
+        width: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 60px;
+    }
+
+    .box2 {
+        margin-right: 10px;
+    }
+
+    .heading {
+        position: relative;
+        height: 40px;
+        width: 265px;
+        margin-bottom: 20px;
+        margin-top: 0;
+        top: 55px;
+    }
+
+    .leftholder {
+        width: 345px;
+    }
+
+    .checkboxes {
+        width: 400px;
+        justify-content: space-around;
+    }
+
+    .heading h1 {
+        font-size: 25px;
+    }
+
+    .rightholder {
+        width: 350px;
+    }
+
+    .checkboxes {
+        width: 330px;
+    }
+
+    .rightholder h3 {
+        margin: 6px 0;
+    }
+
+    .btn_group {
+        position: relative;
+        top: 85px;
+    }
+    
+    .generate_btn {
+        padding: 8px 15px;
+        margin: 8px 0;
+    }
+    
+    .refresh_btn {
+        padding: 6px 12px;
+        margin: 12px 0;
+    }
+
+    .passlen_label {
+        padding: 6px 0;
+        margin-top: 15px;
+    }
+
+    .generate_btn {
+        width: 260px;
+    }
+}
+
+@media (max-width: 400px) {
+    .options_body {
+        width: 330px;
+    }
+
+    .box2 {
+        margin-right: 10px;
+    }
+
+    .heading {
+        position: relative;
+        height: 40px;
+        width: 265px;
+        margin-bottom: 20px;
+        margin-top: 0;
+        top: 55px;
+    }
+
+    .leftholder {
+        width: 345px;
+    }
+
+    .checkboxes {
+        width: 310px;
+    }
+
+    .heading h1 {
+        font-size: 25px;
+    }
+
+    .rightholder {
+        width: 350px;
+    }
+
+    .rightholder h3 {
+        margin: 6px 0;
+    }
+
+    .btn_group {
+        position: relative;
+        top: 85px;
+    }
+    
+    .generate_btn {
+        padding: 8px 15px;
+        margin: 8px 0;
+    }
+    
+    .refresh_btn {
+        padding: 6px 12px;
+        margin: 12px 0;
+    }
+
+    .passlen_label {
+        padding: 6px 0;
+        margin-top: 15px;
+    }
+
+    .generate_btn {
+        width: 260px;
+    }
+}
